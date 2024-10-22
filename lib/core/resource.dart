@@ -51,11 +51,11 @@ class Resource<DataType> {
       case DioExceptionType.badResponse:
         Response? response = error.response;
         code = response?.statusCode ?? ResourceType.requestResponse;
-        if (response != null && code != ResourceType.requestErrorToken) {
+        if (response != null) {
           message = response.data is String
               ? response.data
               : response.data is Map<String, dynamic>
-                  ? response.data["message"] ?? ""
+                  ? response.data["status_message"] ?? ""
                   : "";
         }
         break;

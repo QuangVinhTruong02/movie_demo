@@ -6,6 +6,8 @@ class AppColors {
   static Color grey1 = HexColor.hexColor("#67686D");
   static Color grey2 = HexColor.hexColor("#3A3F47");
   static Color blue = HexColor.hexColor("#0296E5");
+  static Color orange = HexColor.hexColor("#FF8700");
+  
 
 }
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_demo/core/repository/movie_repository.dart';
+import 'package:movie_demo/ui/application/application_viewmodel.dart';
 import 'package:movie_demo/ui/base/base_widget.dart';
 import 'package:movie_demo/ui/home/components/home_view.dart';
 import 'package:movie_demo/ui/home/home_viewmodel.dart';
@@ -16,7 +17,10 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return BaseWidget<HomeViewModel>(
-      viewModel: HomeViewModel(movieRepository: context.read<MovieRepository>()),
+      viewModel: HomeViewModel(
+        movieRepository: context.read<MovieRepository>(),
+        appViewModel: context.read<ApplicationViewModel>(),
+      ),
       onViewModelReady: (viewModel) {
         TabController tabController = TabController(
           length: 4,

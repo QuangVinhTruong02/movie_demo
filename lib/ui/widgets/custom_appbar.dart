@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:movie_demo/ui/widgets/app_textstyle.dart';
 
 class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
-  final Widget? leadingWidget;
+  final Widget? leading;
   final String title;
   final List<Widget>? actions;
   final double? heightBottomAppBar;
   final Widget? bottomAppBar;
   const CustomAppbar({
     super.key,
-    this.leadingWidget,
+    this.leading,
     required this.title,
     this.actions,
     this.heightBottomAppBar,
@@ -20,7 +20,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       centerTitle: true,
-      leading: leadingWidget,
+      leading: leading,
       title: Text(
         title,
         style: AppTextstyle().getSemiBoldMontserratTextStyle(fontSize: 16),

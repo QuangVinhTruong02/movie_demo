@@ -23,6 +23,13 @@ class $AssetsIconsGen {
   SvgGenImage get icBookmark =>
       const SvgGenImage('assets/icons/ic_bookmark.svg');
 
+  /// File path: assets/icons/ic_calendar.svg
+  SvgGenImage get icCalendar =>
+      const SvgGenImage('assets/icons/ic_calendar.svg');
+
+  /// File path: assets/icons/ic_clock.svg
+  SvgGenImage get icClock => const SvgGenImage('assets/icons/ic_clock.svg');
+
   /// File path: assets/icons/ic_home.svg
   SvgGenImage get icHome => const SvgGenImage('assets/icons/ic_home.svg');
 
@@ -37,20 +44,58 @@ class $AssetsIconsGen {
   SvgGenImage get icSearchSuffix =>
       const SvgGenImage('assets/icons/ic_search_suffix.svg');
 
+  /// File path: assets/icons/ic_start.svg
+  SvgGenImage get icStart => const SvgGenImage('assets/icons/ic_start.svg');
+
+  /// File path: assets/icons/ic_ticket.svg
+  SvgGenImage get icTicket => const SvgGenImage('assets/icons/ic_ticket.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [icArrowLeft, icBookmark, icHome, icInfoCircle, icSearch, icSearchSuffix];
+  List<SvgGenImage> get values => [
+        icArrowLeft,
+        icBookmark,
+        icCalendar,
+        icClock,
+        icHome,
+        icInfoCircle,
+        icSearch,
+        icSearchSuffix,
+        icStart,
+        icTicket
+      ];
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  /// File path: assets/images/img_empty_folder.png
+  AssetGenImage get imgEmptyFolder =>
+      const AssetGenImage('assets/images/img_empty_folder.png');
+
   /// File path: assets/images/img_popcorn.png
   AssetGenImage get imgPopcorn =>
       const AssetGenImage('assets/images/img_popcorn.png');
 
+  /// File path: assets/images/img_search_no_results.png
+  AssetGenImage get imgSearchNoResults =>
+      const AssetGenImage('assets/images/img_search_no_results.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [imgPopcorn];
+  List<AssetGenImage> get values =>
+      [imgEmptyFolder, imgPopcorn, imgSearchNoResults];
+}
+
+class $AssetsJsonAnimGen {
+  const $AssetsJsonAnimGen();
+
+  /// File path: assets/json_anim/anim_error.json
+  String get animError => 'assets/json_anim/anim_error.json';
+
+  /// File path: assets/json_anim/anim_loading.json
+  String get animLoading => 'assets/json_anim/anim_loading.json';
+
+  /// List of all assets
+  List<String> get values => [animError, animLoading];
 }
 
 class Assets {
@@ -58,6 +103,7 @@ class Assets {
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
+  static const $AssetsJsonAnimGen jsonAnim = $AssetsJsonAnimGen();
 }
 
 class AssetGenImage {

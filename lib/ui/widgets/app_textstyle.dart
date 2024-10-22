@@ -54,6 +54,15 @@ class AppTextstyle {
     );
   }
 
+  TextStyle getMediumMontserratTextStyle({double fontSize = 14, Color? color}) {
+    return _getTextStyle(
+      fontWeight: FontWeight.w500,
+      fontFamily: FontFamily.montserrat,
+      fontSize: fontSize,
+      color: color,
+    );
+  }
+
   TextStyle getSemiBoldMontserratTextStyle({double fontSize = 14, Color? color}) {
     return _getTextStyle(
       fontWeight: FontWeight.w600,

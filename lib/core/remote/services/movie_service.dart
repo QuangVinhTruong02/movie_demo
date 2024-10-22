@@ -8,24 +8,31 @@ part 'movie_service.g.dart';
 abstract class MovieService {
   factory MovieService(Dio dio, {String baseUrl}) = _MovieService;
 
-  @GET("/top_rated")
+  @GET("/movie/top_rated")
   Future<PageResponse> getTopRatedList(
     @Query(AppConst.apiKeyQuery) String apiKey,
     @Query("page") int page,
   );
-  @GET("/now_playing")
+  @GET("/movie/now_playing")
   Future<PageResponse> getNowPlayingList(
     @Query(AppConst.apiKeyQuery) String apiKey,
     @Query("page") int page,
   );
-  @GET("/popular")
+  @GET("/movie/popular")
   Future<PageResponse> getPopularList(
     @Query(AppConst.apiKeyQuery) String apiKey,
     @Query("page") int page,
   );
-  @GET("/upcoming")
+  @GET("/movie/upcoming")
   Future<PageResponse> getUpcomingList(
     @Query(AppConst.apiKeyQuery) String apiKey,
+    @Query("page") int page,
+  );
+
+  @GET("/search/movie")
+  Future<PageResponse> searchMovie(
+    @Query(AppConst.apiKeyQuery) String apiKey,
+    @Query("query") String query,
     @Query("page") int page,
   );
 }

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_demo/gen/assets.gen.dart';
+import 'package:movie_demo/ui/home/home_viewmodel.dart';
 import 'package:movie_demo/ui/widgets/app_textstyle.dart';
 import 'package:movie_demo/ui/widgets/custom_textfield.dart';
 import 'package:movie_demo/utils/app_languages.dart';
+import 'package:provider/provider.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeAppBar({super.key});
@@ -12,6 +14,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final viewModel = context.read<HomeViewModel>();
     return AppBar(
       automaticallyImplyLeading: false,
       title: Padding(
@@ -31,7 +34,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             hintText: AppLanguages.search,
             readOnly: true,
             suffixWidget: SvgPicture.asset(Assets.icons.icSearchSuffix.path),
-            onTap: () {},
+            onTap: viewModel.onPressedNavigateSearchPage,
           ),
         ),
       ),

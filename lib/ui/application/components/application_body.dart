@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_demo/ui/application/application_viewmodel.dart';
 import 'package:movie_demo/ui/home/home_page.dart';
+import 'package:movie_demo/ui/search/search_page.dart';
 import 'package:provider/provider.dart';
 
 class ApplicationBody extends StatelessWidget {
@@ -14,9 +15,7 @@ class ApplicationBody extends StatelessWidget {
       controller: viewModel.pageController,
       children: const [
         HomePage(),
-        Center(
-          child: Text("search"),
-        ),
+        SearchPage(),
         Center(
           child: Text("watch list"),
         ),

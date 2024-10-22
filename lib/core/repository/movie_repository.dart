@@ -47,4 +47,12 @@ class MovieRepository {
       },
     ).getAsFuture();
   }
+
+  Future<Resource<List<Movie>>> searchMovie(String query, int page) async {
+    return await NetworkBoundResource<List<Movie>, List<Movie>>(
+      createSerializedCall: () => movieService.searchMovie(AppConst.apiKey, query, page).then(
+            (value) => value.items,
+          ),
+    ).getAsFuture();
+  }
 }

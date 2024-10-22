@@ -3,13 +3,18 @@ import 'package:movie_demo/core/models/movie.dart';
 import 'package:movie_demo/core/repository/movie_repository.dart';
 import 'package:movie_demo/core/resource.dart';
 import 'package:movie_demo/core/resource_type.dart';
+import 'package:movie_demo/core/type/index_page_type.dart';
 import 'package:movie_demo/core/type/movie_type.dart';
+import 'package:movie_demo/core/type/state_rerender_type.dart';
+import 'package:movie_demo/ui/application/application_viewmodel.dart';
 import 'package:movie_demo/ui/base/base_viewmodel.dart';
+import 'package:movie_demo/ui/widgets/state_rerender_popup.dart';
 import 'package:rxdart/rxdart.dart';
 
 class HomeViewModel extends BaseViewModel {
   final MovieRepository movieRepository;
-  HomeViewModel({required this.movieRepository});
+  final ApplicationViewModel appViewModel;
+  HomeViewModel({required this.movieRepository, required this.appViewModel});
 
   List<MovieType> movieTypeList = MovieType.values;
   List<Movie> topFiveRatedMovieList = [];
@@ -40,12 +45,23 @@ class HomeViewModel extends BaseViewModel {
 
   Future<void> fetchTopFiveRated() async {
     await movieRepository.getTopRatedList(page).then(
-      (response) {
+      (Resource<List<Movie>> response) {
         if (response.code == ResourceType.requestSuccess) {
           topFiveRatedMovieList = response.data?.take(5).toList() ?? [];
+        } else {
+          throw response;
         }
       },
-    ).catchError((error) {});
+    ).catchError((error) {
+      if (error is Resource<List<Movie>>) {
+        showDialogCustom(
+          child: StateRerenderPopup(
+            stateRerenderType: StateRerenderType.errorState,
+            message: error.message,
+          ),
+        );
+      }
+    });
   }
 
   Future<void> fetchMovieList({required MovieType movieType, bool isLoadMore = false}) async {
@@ -72,6 +88,10 @@ class HomeViewModel extends BaseViewModel {
         movieList = response.data ?? [];
       }
     }
+  }
+
+  void onPressedNavigateSearchPage() {
+    appViewModel.setIndexPage(IndexPageType.search.index);
   }
 
   void _stopLoadMore(int dataLength) {

@@ -1,28 +1,31 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:movie_demo/helper/date_time_json_converter.dart';
 part 'movie.g.dart';
 
 @JsonSerializable()
 class Movie {
-  final int? id;
-  final String? title;
+  final int id;
+  @JsonKey(name: "title", defaultValue: "")
+  final String title;
   final String? overview;
   final int? runtime;
-  @JsonKey(name: "backdrop_path")
-  final String? backdropPath;
-  @JsonKey(name: "poster_path")
-  final String? posterPath;
+  @JsonKey(name: "backdrop_path", defaultValue: "")
+  final String backdropPath;
+  @JsonKey(name: "poster_path", defaultValue: "")
+  final String posterPath;
   @JsonKey(name: "release_date")
-  final String? releaseDate;
+  @DateTimeJsonConverter()
+  final DateTime? releaseDate;
   @JsonKey(name: "vote_average")
   final double? voteAverage;
 
   Movie({
-    this.id,
-    this.title,
+    required this.id,
+    required this.title,
     this.overview,
     this.runtime,
-    this.backdropPath,
-    this.posterPath,
+    required this.backdropPath,
+    required this.posterPath,
     this.releaseDate,
     this.voteAverage,
   });

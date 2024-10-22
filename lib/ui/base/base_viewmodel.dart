@@ -16,6 +16,16 @@ abstract class BaseViewModel extends ChangeNotifier {
     loadingSubject.add(loading);
   }
 
+
+  Future<T?> showDialogCustom<T>({required Widget child}) {
+    return showDialog<T>(
+      context: context,
+      builder: (context) {
+        return child;
+      },
+    );
+  }
+
   bool _isDisposed = false;
 
   bool get isLoading => loadingSubject.valueOrNull ?? false;

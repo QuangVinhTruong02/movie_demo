@@ -1,4 +1,6 @@
 class AppLanguages {
+  static const loading = "Loading";
+  static const cancel = "Cancel";
   //homepage
   static const whatDoYouWantToWatch = "What do you want to watch?";
   static const search = "Search";
@@ -8,6 +10,11 @@ class AppLanguages {
   static const popular = "Popular";
   static const home = "Home";
   static const watchList = "Watch list";
+
+  //searchpage
+  static const String notFindTheMovieTitle = "we are sorry, we can not find the movie :(";
+  static const String notFindTheMovieSubTitle =
+      "Find your movie by Type title, categories, ye ars, etc ";
 
   //API status code
   static const String success = "Success";

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:movie_demo/ui/widgets/app_textstyle.dart';
+import 'package:movie_demo/utils/app_colors.dart';
 
 class CustomTextfield extends StatelessWidget {
   final TextEditingController? controller;
   final Widget? suffixWidget;
   final Function()? onTap;
+  final Function(String)? onSubmitted;
   final bool readOnly;
   final String hintText;
   const CustomTextfield({
@@ -13,6 +16,7 @@ class CustomTextfield extends StatelessWidget {
     this.onTap,
     this.readOnly = false,
     required this.hintText,
+    this.onSubmitted,
   });
 
   @override
@@ -21,6 +25,8 @@ class CustomTextfield extends StatelessWidget {
       onTap: onTap,
       readOnly: readOnly,
       controller: controller,
+      style: AppTextstyle().getRegularPoppinTextStyle(),
+      cursorColor: AppColors.white,
       decoration: InputDecoration(
         hintText: hintText,
         suffixIcon: Padding(
@@ -28,6 +34,7 @@ class CustomTextfield extends StatelessWidget {
           child: suffixWidget,
         ),
       ),
+      onFieldSubmitted: onSubmitted,
     );
   }
 }

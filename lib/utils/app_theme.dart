@@ -25,6 +25,18 @@ class AppTheme {
           borderRadius: BorderRadius.circular(16),
         ),
       ),
+      buttonTheme: const ButtonThemeData(
+        shape: StadiumBorder(),
+      ),
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: ElevatedButton.styleFrom(
+          textStyle: AppTextstyle().getMediumPoppinTextStyle(fontSize: 16),
+          backgroundColor: AppColors.blue,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(28),
+          ),
+        ),
+      ),
     );
   }
 }
