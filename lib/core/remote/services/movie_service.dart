@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:movie_demo/core/models/movie.dart';
 import 'package:movie_demo/core/models/page_response.dart';
 import 'package:movie_demo/utils/app_const.dart';
 import 'package:retrofit/retrofit.dart';
@@ -34,5 +35,11 @@ abstract class MovieService {
     @Query(AppConst.apiKeyQuery) String apiKey,
     @Query("query") String query,
     @Query("page") int page,
+  );
+
+  @GET("/movie/{movie_id}")
+  Future<Movie> getDetailMovie(
+    @Query(AppConst.apiKeyQuery) String apiKey,
+    @Path("movie_id") int id,
   );
 }

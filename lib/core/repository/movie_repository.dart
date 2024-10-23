@@ -55,4 +55,10 @@ class MovieRepository {
           ),
     ).getAsFuture();
   }
+
+  Future<Resource<Movie>> getDetailMovie(int id) async {
+    return await NetworkBoundResource<Movie, Movie>(
+      createSerializedCall: () => movieService.getDetailMovie(AppConst.apiKey, id),
+    ).getAsFuture();
+  }
 }

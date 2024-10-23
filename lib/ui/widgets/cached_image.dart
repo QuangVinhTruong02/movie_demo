@@ -6,11 +6,13 @@ class CachedImage extends StatelessWidget {
   final String imageUrl;
   final double? height;
   final double? width;
+  final BorderRadiusGeometry? borderRadiusGeometry;
   const CachedImage({
     super.key,
     required this.imageUrl,
     this.height,
     this.width,
+    this.borderRadiusGeometry,
   });
 
   @override
@@ -22,7 +24,7 @@ class CachedImage extends StatelessWidget {
           height: height,
           width: width,
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16),
+            borderRadius: borderRadiusGeometry ?? BorderRadius.circular(16),
             image: DecorationImage(
               image: imageProvider,
               fit: BoxFit.cover,

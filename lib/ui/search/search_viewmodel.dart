@@ -4,6 +4,7 @@ import 'package:movie_demo/core/repository/movie_repository.dart';
 import 'package:movie_demo/core/resource.dart';
 import 'package:movie_demo/core/resource_type.dart';
 import 'package:movie_demo/core/type/state_rerender_type.dart';
+import 'package:movie_demo/helper/routers.dart';
 import 'package:movie_demo/ui/base/base_viewmodel.dart';
 import 'package:movie_demo/ui/widgets/state_rerender_popup.dart';
 import 'package:rxdart/rxdart.dart';
@@ -76,6 +77,10 @@ class SearchViewmodel extends BaseViewModel {
         _loadMoreSubject.add(false);
       },
     );
+  }
+
+  void onPressedNavigateDetailMoviePage(int movieId) {
+    Navigator.pushNamed(context, Routers.detailMoive, arguments: movieId);
   }
 
   Future<void> onSearchPressed() async {

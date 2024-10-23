@@ -1,4 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
+import 'package:movie_demo/core/models/genres.dart';
 import 'package:movie_demo/helper/date_time_json_converter.dart';
 part 'movie.g.dart';
 
@@ -18,6 +19,8 @@ class Movie {
   final DateTime? releaseDate;
   @JsonKey(name: "vote_average")
   final double? voteAverage;
+  @JsonKey(name: "genres")
+  final List<Genres>? genresList;
 
   Movie({
     required this.id,
@@ -28,6 +31,7 @@ class Movie {
     required this.posterPath,
     this.releaseDate,
     this.voteAverage,
+    this.genresList
   });
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);

@@ -44,6 +44,7 @@ class HomeCarousel extends StatelessWidget {
                     : movie.backdropPath,
                 titleOnImg: movie.title,
                 textStyle: AppTextstyle().getSemiBoldPoppinTextStyle(fontSize: 18),
+                onTap: () => viewModel.onPressedNavigateDetailMoviePage(movie.id),
               );
             },
             options: CarouselOptions(

@@ -1,20 +1,27 @@
 class AppLanguages {
-  static const loading = "Loading";
-  static const cancel = "Cancel";
+  static const String loading = "Loading";
+  static const String cancel = "Cancel";
   //homepage
-  static const whatDoYouWantToWatch = "What do you want to watch?";
-  static const search = "Search";
-  static const nowPlaying = "Now playing";
-  static const upcomming = "Upcomming";
-  static const topRated = "Top rated";
-  static const popular = "Popular";
-  static const home = "Home";
-  static const watchList = "Watch list";
+  static const String whatDoYouWantToWatch = "What do you want to watch?";
+  static const String search = "Search";
+  static const String nowPlaying = "Now playing";
+  static const String upcomming = "Upcomming";
+  static const String topRated = "Top rated";
+  static const String popular = "Popular";
+  static const String home = "Home";
+  static const String watchList = "Watch list";
 
   //searchpage
   static const String notFindTheMovieTitle = "we are sorry, we can not find the movie :(";
   static const String notFindTheMovieSubTitle =
       "Find your movie by Type title, categories, ye ars, etc ";
+
+  //detailpage
+  static const String detail = "Detail";
+  static const String aboutMovie = "About movie";
+  static const String genres = "Genres";
+  static const String releaseDate = "Release date";
+  static const String runTime = "Run time";
 
   //API status code
   static const String success = "Success";

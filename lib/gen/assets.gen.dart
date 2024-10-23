@@ -23,6 +23,10 @@ class $AssetsIconsGen {
   SvgGenImage get icBookmark =>
       const SvgGenImage('assets/icons/ic_bookmark.svg');
 
+  /// File path: assets/icons/ic_bookmark_white.svg
+  SvgGenImage get icBookmarkWhite =>
+      const SvgGenImage('assets/icons/ic_bookmark_white.svg');
+
   /// File path: assets/icons/ic_calendar.svg
   SvgGenImage get icCalendar =>
       const SvgGenImage('assets/icons/ic_calendar.svg');
@@ -54,6 +58,7 @@ class $AssetsIconsGen {
   List<SvgGenImage> get values => [
         icArrowLeft,
         icBookmark,
+        icBookmarkWhite,
         icCalendar,
         icClock,
         icHome,

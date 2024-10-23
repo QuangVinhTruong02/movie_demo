@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_demo/gen/assets.gen.dart';
-import 'package:movie_demo/ui/search/components/search_app_bar.dart';
 import 'package:movie_demo/ui/search/components/search_list_view_result.dart';
 import 'package:movie_demo/ui/search/components/search_no_result.dart';
 import 'package:movie_demo/ui/search/search_viewmodel.dart';
@@ -15,41 +14,38 @@ class SearchView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final viewModel = context.read<SearchViewmodel>();
-    return Scaffold(
-      appBar: const SearchAppBar(),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.only(top: 16, right: 24, left: 24, bottom: 16),
-            child: CustomTextfield(
-              controller: viewModel.searchEditingController,
-              hintText: AppLanguages.search,
-              suffixWidget: GestureDetector(
-                onTap: viewModel.onSearchPressed,
-                child: SvgPicture.asset(Assets.icons.icSearchSuffix.path),
-              ),
-              onSubmitted: (value) => viewModel.onSearchPressed(),
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 16, right: 24, left: 24, bottom: 16),
+          child: CustomTextfield(
+            controller: viewModel.searchEditingController,
+            hintText: AppLanguages.search,
+            suffixWidget: GestureDetector(
+              onTap: viewModel.onSearchPressed,
+              child: SvgPicture.asset(Assets.icons.icSearchSuffix.path),
             ),
+            onSubmitted: (value) => viewModel.onSearchPressed(),
           ),
-          Flexible(
-            child: StreamBuilder<bool>(
-              stream: viewModel.loadingSubject,
-              builder: (context, snapshot) {
-                bool isLoading = snapshot.data ?? false;
-                if (isLoading) {
-                  return const Center(
-                    child: CircularProgressIndicator(),
-                  );
-                }
-                if (viewModel.movieList.isEmpty) {
-                  return const SearchNoResult();
-                }
-                return const SearchListViewResult();
-              },
-            ),
-          )
-        ],
-      ),
+        ),
+        Flexible(
+          child: StreamBuilder<bool>(
+            stream: viewModel.loadingSubject,
+            builder: (context, snapshot) {
+              bool isLoading = snapshot.data ?? false;
+              if (isLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              if (viewModel.movieList.isEmpty) {
+                return const SearchNoResult();
+              }
+              return const SearchListViewResult();
+            },
+          ),
+        )
+      ],
     );
   }
 }

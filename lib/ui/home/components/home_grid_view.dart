@@ -61,6 +61,7 @@ class HomeGridView extends StatelessWidget {
                           : movie.backdropPath,
                       titleOnImg: movie.title,
                       textStyle: AppTextstyle().getMediumPoppinTextStyle(fontSize: 16),
+                      onTap: () => viewModel.onPressedNavigateDetailMoviePage(movie.id),
                     );
                   },
                 ),
