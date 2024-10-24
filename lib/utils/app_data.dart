@@ -4,4 +4,6 @@ class AppData {
 
   static const String rate = "9.5";
   static const String movieTitle = "Spiderman no way home";
+
+  static const String videoId = "Xithigfg7dA";
 }

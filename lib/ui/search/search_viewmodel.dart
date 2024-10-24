@@ -3,10 +3,8 @@ import 'package:movie_demo/core/models/movie.dart';
 import 'package:movie_demo/core/repository/movie_repository.dart';
 import 'package:movie_demo/core/resource.dart';
 import 'package:movie_demo/core/resource_type.dart';
-import 'package:movie_demo/core/type/state_rerender_type.dart';
 import 'package:movie_demo/helper/routers.dart';
 import 'package:movie_demo/ui/base/base_viewmodel.dart';
-import 'package:movie_demo/ui/widgets/state_rerender_popup.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SearchViewmodel extends BaseViewModel {
@@ -34,17 +32,10 @@ class SearchViewmodel extends BaseViewModel {
       if (response.code == ResourceType.requestSuccess) {
         movieList = response.data ?? [];
       } else {
-        throw response;
+        throw response.message;
       }
     }).catchError((error) {
-      if (error is Resource<List<Movie>>) {
-        showDialogCustom(
-          child: StateRerenderPopup(
-            stateRerenderType: StateRerenderType.errorState,
-            message: error.message,
-          ),
-        );
-      }
+      showDialogErorCustom(messsage: error);
     });
   }
 
@@ -61,17 +52,10 @@ class SearchViewmodel extends BaseViewModel {
         movieList.addAll(response.data ?? []);
         _stopLoadMore(response.data?.length ?? 0);
       } else {
-        throw response;
+        throw response.message;
       }
     })).catchError((error) {
-      if (error is Resource<List<Movie>>) {
-        showDialogCustom(
-          child: StateRerenderPopup(
-            stateRerenderType: StateRerenderType.errorState,
-            message: error.message,
-          ),
-        );
-      }
+      showDialogErorCustom(messsage: error);
     }).whenComplete(
       () {
         _loadMoreSubject.add(false);
@@ -80,7 +64,7 @@ class SearchViewmodel extends BaseViewModel {
   }
 
   void onPressedNavigateDetailMoviePage(int movieId) {
-    Navigator.pushNamed(context, Routers.detailMoive, arguments: movieId);
+    Navigator.pushNamed(context, Routers.detailMovie, arguments: movieId);
   }
 
   Future<void> onSearchPressed() async {

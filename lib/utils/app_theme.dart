@@ -5,8 +5,11 @@ import 'package:movie_demo/utils/app_colors.dart';
 class AppTheme {
   ThemeData getApplicationTheme() {
     return ThemeData().copyWith(
-      scaffoldBackgroundColor: AppColors.backGroundColor,
-      appBarTheme: AppBarTheme(backgroundColor: AppColors.backGroundColor),
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: AppColors.blue,
+      ),
+      // scaffoldBackgroundColor: AppColors.darkBackGroundColor,
+      appBarTheme: AppBarTheme(backgroundColor: AppColors.darkBackGroundColor),
       inputDecorationTheme: InputDecorationTheme(
         fillColor: AppColors.grey2,
         filled: true,

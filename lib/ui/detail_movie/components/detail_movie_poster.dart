@@ -14,7 +14,7 @@ class DetailMoviePoster extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.32,
+      height: MediaQuery.of(context).size.height * 0.3,
       child: Stack(
         children: [
           CachedImage(
@@ -30,7 +30,7 @@ class DetailMoviePoster extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  color: AppColors.backGroundColor.withOpacity(0.4)),
+                  color: AppColors.darkBackGroundColor.withOpacity(0.4)),
               child: Row(
                 children: [
                   SvgPicture.asset(Assets.icons.icStart.path),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:movie_demo/core/repository/movie_repository.dart';
+import 'package:movie_demo/core/repository/youtube_repository.dart';
 import 'package:movie_demo/ui/base/base_widget.dart';
 import 'package:movie_demo/ui/detail_movie/components/detail_movie_view.dart';
 import 'package:movie_demo/ui/detail_movie/detail_movie_viewmodel.dart';
@@ -15,6 +16,7 @@ class DetailMoviePage extends StatelessWidget {
       viewModel: DetailMovieViewModel(
         movieId: movieId,
         movieRepository: context.read<MovieRepository>(),
+        youtubeRepository: context.read<YoutubeRepository>(),
       ),
       builder: (context, viewModel, child) {
         return const DetailMovieView();

@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:movie_demo/ui/application/application_page.dart';
 import 'package:movie_demo/ui/detail_movie/detail_movie_page.dart';
 import 'package:movie_demo/ui/splash/splash_page.dart';
+import 'package:movie_demo/ui/watch_trailer/watch_trailer_page.dart';
 
 class Routers {
   static const String splash = "/";
   static const String application = "/application";
-  static const String detailMoive = "/detailMovie";
+  static const String detailMovie = "/detailMovie";
+  static const String watchTrailer = "/watchTrailer";
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
     String? routeName = settings.name;
@@ -16,11 +18,17 @@ class Routers {
         return animRoute(const SplashPage());
       case application:
         return animRoute(const ApplicationPage());
-      case detailMoive:
+      case detailMovie:
         if (argument is int) {
           return animRoute(DetailMoviePage(movieId: argument));
         } else {
           throw Exception("argument is not int");
+        }
+      case watchTrailer:
+        if (argument is String) {
+          return animRoute(WatchTrailerPage(videoId: argument));
+        } else {
+          throw Exception("argument is not String");
         }
       default:
         return MaterialPageRoute(

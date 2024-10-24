@@ -5,9 +5,7 @@ import 'package:movie_demo/utils/app_theme.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  runApp(MultiProvider(
-    providers: providers,
-    child: const MyApp()));
+  runApp(MultiProvider(providers: providers, child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

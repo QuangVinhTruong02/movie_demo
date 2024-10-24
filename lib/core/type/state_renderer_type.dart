@@ -1,17 +1,17 @@
 import 'package:movie_demo/gen/assets.gen.dart';
 
-enum StateRerenderType {
+enum StateRendererType {
   loadingState,
   errorState,
-  successState;
+  contentState;
 
   String get animatedImage {
     switch (this) {
-      case StateRerenderType.loadingState:
+      case StateRendererType.loadingState:
         return Assets.jsonAnim.animLoading;
-      case StateRerenderType.errorState:
+      case StateRendererType.errorState:
         return Assets.jsonAnim.animError;
-      case StateRerenderType.successState:
+      case StateRendererType.contentState:
         return "";
     }
   }

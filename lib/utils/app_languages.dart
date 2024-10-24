@@ -22,6 +22,7 @@ class AppLanguages {
   static const String genres = "Genres";
   static const String releaseDate = "Release date";
   static const String runTime = "Run time";
+  static const String watchTrailer = "Watch trailer";
 
   //API status code
   static const String success = "Success";

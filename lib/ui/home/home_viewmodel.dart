@@ -5,11 +5,9 @@ import 'package:movie_demo/core/resource.dart';
 import 'package:movie_demo/core/resource_type.dart';
 import 'package:movie_demo/core/type/index_page_type.dart';
 import 'package:movie_demo/core/type/movie_type.dart';
-import 'package:movie_demo/core/type/state_rerender_type.dart';
 import 'package:movie_demo/helper/routers.dart';
 import 'package:movie_demo/ui/application/application_viewmodel.dart';
 import 'package:movie_demo/ui/base/base_viewmodel.dart';
-import 'package:movie_demo/ui/widgets/state_rerender_popup.dart';
 import 'package:rxdart/rxdart.dart';
 
 class HomeViewModel extends BaseViewModel {
@@ -50,18 +48,11 @@ class HomeViewModel extends BaseViewModel {
         if (response.code == ResourceType.requestSuccess) {
           topFiveRatedMovieList = response.data?.take(5).toList() ?? [];
         } else {
-          throw response;
+          throw response.message;
         }
       },
     ).catchError((error) {
-      if (error is Resource<List<Movie>>) {
-        showDialogCustom(
-          child: StateRerenderPopup(
-            stateRerenderType: StateRerenderType.errorState,
-            message: error.message,
-          ),
-        );
-      }
+      showDialogErorCustom(messsage: error);
     });
   }
 
@@ -113,7 +104,7 @@ class HomeViewModel extends BaseViewModel {
   }
 
   void onPressedNavigateDetailMoviePage(int movieId) {
-    Navigator.pushNamed(context, Routers.detailMoive, arguments: movieId);
+    Navigator.pushNamed(context, Routers.detailMovie, arguments: movieId);
   }
 
   @override

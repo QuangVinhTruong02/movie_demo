@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_demo/core/type/state_renderer_type.dart';
+import 'package:movie_demo/ui/widgets/state_renderer_popup.dart';
 import 'package:rxdart/rxdart.dart';
 
 abstract class BaseViewModel extends ChangeNotifier {
@@ -16,13 +18,35 @@ abstract class BaseViewModel extends ChangeNotifier {
     loadingSubject.add(loading);
   }
 
-
   Future<T?> showDialogCustom<T>({required Widget child}) {
     return showDialog<T>(
       context: context,
       builder: (context) {
         return child;
       },
+    );
+  }
+
+  showDialogLoadingCustom() {
+    showDialogCustom(
+      child: const StateRendererPopup(stateRerenderType: StateRendererType.loadingState),
+    );
+  }
+
+  _isThereCurrentDialogShowing() => ModalRoute.of(context)?.isCurrent != true;
+  dismissDialog() {
+    if (_isThereCurrentDialogShowing()) {
+      Navigator.pop(context);
+    }
+  }
+
+  showDialogErorCustom({required String messsage}) {
+    dismissDialog();
+    showDialogCustom(
+      child: StateRendererPopup(
+        stateRerenderType: StateRendererType.errorState,
+        message: messsage,
+      ),
     );
   }
 

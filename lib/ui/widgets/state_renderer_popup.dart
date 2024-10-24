@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:movie_demo/core/type/state_rerender_type.dart';
+import 'package:movie_demo/core/type/state_renderer_type.dart';
 import 'package:movie_demo/ui/widgets/app_textstyle.dart';
 import 'package:movie_demo/ui/widgets/custom_button.dart';
 import 'package:movie_demo/utils/app_colors.dart';
 import 'package:movie_demo/utils/app_languages.dart';
 import 'package:lottie/lottie.dart';
 
-class StateRerenderPopup extends StatelessWidget {
-  final StateRerenderType stateRerenderType;
+class StateRendererPopup extends StatelessWidget {
+  final StateRendererType stateRerenderType;
   final String message;
   final Function? retryActionFunction;
-  const StateRerenderPopup({
+  const StateRendererPopup({
     super.key,
     required this.stateRerenderType,
     this.message = AppLanguages.loading,
@@ -48,7 +48,7 @@ class StateRerenderPopup extends StatelessWidget {
               child: Lottie.asset(stateRerenderType.animatedImage),
             ),
             Padding(
-              padding: const EdgeInsets.all(18),
+              padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Text(
                 message,
                 style: AppTextstyle().getMediumPoppinTextStyle(fontSize: 16),
@@ -56,7 +56,7 @@ class StateRerenderPopup extends StatelessWidget {
               ),
             ),
             Container(
-              padding: const EdgeInsets.all(18),
+              padding: const EdgeInsets.symmetric(horizontal: 18, vertical: 10),
               width: double.infinity,
               child: CustomButton(
                 title: AppLanguages.cancel,

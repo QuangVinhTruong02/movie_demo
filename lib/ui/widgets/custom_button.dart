@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: onPressed,
-      style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 40)),
+      style: ElevatedButton.styleFrom(minimumSize: const Size(double.infinity, 45)),
       child: Text(
         title,
         style: AppTextstyle().getMediumPoppinTextStyle(fontSize: 16),
