@@ -103,12 +103,26 @@ class $AssetsJsonAnimGen {
   List<String> get values => [animError, animLoading];
 }
 
+class $AssetsTranslationsGen {
+  const $AssetsTranslationsGen();
+
+  /// File path: assets/translations/en-US.json
+  String get enUS => 'assets/translations/en-US.json';
+
+  /// File path: assets/translations/vi-VN.json
+  String get viVN => 'assets/translations/vi-VN.json';
+
+  /// List of all assets
+  List<String> get values => [enUS, viVN];
+}
+
 class Assets {
   Assets._();
 
   static const $AssetsIconsGen icons = $AssetsIconsGen();
   static const $AssetsImagesGen images = $AssetsImagesGen();
   static const $AssetsJsonAnimGen jsonAnim = $AssetsJsonAnimGen();
+  static const $AssetsTranslationsGen translations = $AssetsTranslationsGen();
 }
 
 class AssetGenImage {

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_demo/ui/detail_movie/detail_movie_viewmodel.dart';
 import 'package:movie_demo/ui/widgets/custom_button.dart';
@@ -14,7 +15,7 @@ class DetailMovieBottomNavBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 29, vertical: 10),
       child: CustomButton(
         onPressed: viewModel.onPressedNavigateWatchTrailerPage,
-        title: AppLanguages.watchTrailer,
+        title: AppLanguages.watchTrailer.tr(),
       ),
     );
   }

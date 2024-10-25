@@ -3,6 +3,7 @@ import 'package:movie_demo/core/remote/services/youtube_service.dart';
 import 'package:movie_demo/core/repository/movie_repository.dart';
 import 'package:movie_demo/core/repository/youtube_repository.dart';
 import 'package:movie_demo/core/retrofit.dart';
+import 'package:movie_demo/utils/app_shared.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -13,6 +14,7 @@ List<SingleChildWidget> providers = [
 ];
 
 List<SingleChildWidget> independentServices = [
+  Provider.value(value: AppShared()),
   Provider.value(value: Retrofit()),
 ];
 

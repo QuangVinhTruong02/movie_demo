@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:movie_demo/core/models/movie.dart';
 import 'package:movie_demo/ui/detail_movie/components/detail_movie_backdrop_title.dart';
@@ -29,7 +30,7 @@ class DetailMovieBody extends StatelessWidget {
         if (movie == null) {
           return Center(
             child: Text(
-              AppLanguages.somethingWentWrong,
+              AppLanguages.somethingWentWrong.tr(),
               style: AppTextstyle().getSemiBoldPoppinTextStyle(
                 fontSize: 18,
                 color: AppColors.red,
@@ -57,25 +58,25 @@ class DetailMovieBody extends StatelessWidget {
               ),
               const SizedBox(height: 16),
               DetailMoviePiece(
-                title: AppLanguages.genres,
+                title: AppLanguages.genres.tr(),
                 subTitle:
                     movie.genresList?.map((item) => item.name).join(", ") ?? AppLanguages.unknown,
               ),
               const SizedBox(height: 4),
               DetailMoviePiece(
-                title: AppLanguages.runTime,
+                title: AppLanguages.runTime.tr(),
                 subTitle: movie.runtime?.toString() ?? AppLanguages.unknown,
               ),
               const SizedBox(height: 4),
               DetailMoviePiece(
-                title: AppLanguages.releaseDate,
+                title: AppLanguages.releaseDate.tr(),
                 subTitle: movie.releaseDate != null
                     ? DateTimeUtil().convertDateTimeToString(dateTime: movie.releaseDate!)
                     : AppLanguages.unknown,
               ),
               const SizedBox(height: 4),
               DetailMoviePiece(
-                title: AppLanguages.aboutMovie,
+                title: AppLanguages.aboutMovie.tr(),
                 subTitle: movie.overview ?? AppLanguages.unknown,
               ),
             ],

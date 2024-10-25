@@ -8,7 +8,7 @@ class AppTheme {
       colorScheme: ColorScheme.fromSwatch().copyWith(
         primary: AppColors.blue,
       ),
-      // scaffoldBackgroundColor: AppColors.darkBackGroundColor,
+      scaffoldBackgroundColor: AppColors.darkBackGroundColor,
       appBarTheme: AppBarTheme(backgroundColor: AppColors.darkBackGroundColor),
       inputDecorationTheme: InputDecorationTheme(
         fillColor: AppColors.grey2,

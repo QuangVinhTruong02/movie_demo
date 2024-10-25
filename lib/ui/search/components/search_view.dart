@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_demo/gen/assets.gen.dart';
@@ -20,7 +21,7 @@ class SearchView extends StatelessWidget {
           padding: const EdgeInsets.only(top: 16, right: 24, left: 24, bottom: 16),
           child: CustomTextfield(
             controller: viewModel.searchEditingController,
-            hintText: AppLanguages.search,
+            hintText: AppLanguages.search.tr(),
             suffixWidget: GestureDetector(
               onTap: viewModel.onSearchPressed,
               child: SvgPicture.asset(Assets.icons.icSearchSuffix.path),

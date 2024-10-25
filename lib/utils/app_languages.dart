@@ -1,31 +1,35 @@
 class AppLanguages {
-  static const String loading = "Loading";
-  static const String cancel = "Cancel";
+  static const String loading = "loading";
+  static const String cancel = "cancel";
   //homepage
-  static const String whatDoYouWantToWatch = "What do you want to watch?";
-  static const String search = "Search";
-  static const String nowPlaying = "Now playing";
-  static const String upcomming = "Upcomming";
-  static const String topRated = "Top rated";
-  static const String popular = "Popular";
-  static const String home = "Home";
-  static const String watchList = "Watch list";
+  static const String whatDoYouWantToWatch = "what_do_you_want_to_watch";
+  static const String search = "search";
+  static const String nowPlaying = "now_playing";
+  static const String upcomming = "upcomming";
+  static const String topRated = "top_rated";
+  static const String popular = "popular";
+  static const String home = "home";
+  static const String watchList = "watch_list";
+  static const String setting = "setting";
 
   //searchpage
-  static const String notFindTheMovieTitle = "we are sorry, we can not find the movie :(";
-  static const String notFindTheMovieSubTitle =
-      "Find your movie by Type title, categories, ye ars, etc ";
+  static const String notFindTheMovieTitle = "not_find_the_movie_title";
+  static const String notFindTheMovieSubTitle = "not_find_the_movie_sub_title";
 
   //detailpage
-  static const String detail = "Detail";
-  static const String aboutMovie = "About movie";
-  static const String genres = "Genres";
-  static const String releaseDate = "Release date";
-  static const String runTime = "Run time";
-  static const String watchTrailer = "Watch trailer";
+  static const String detail = "detail";
+  static const String aboutMovie = "about_movie";
+  static const String genres = "genres";
+  static const String releaseDate = "release_date";
+  static const String runTime = "run_time";
+  static const String watchTrailer = "watch_trailer";
+
+  //settinpage
+  static const String darkMode = "dark_mode";
+  static const String language = "language";
 
   //API status code
-  static const String success = "Success";
+  static const String success = "success";
   static const String successNoData = "Success with no Data";
   static const String badRequest = "Bad request, try again later";
   static const String forbidden = "Forbidden request, try again later";
@@ -40,4 +44,6 @@ class AppLanguages {
 
   static const String unknown = "Unknown";
   static const String empty = "Empty";
+  static const String english = "english";
+  static const String vienamese = "vietnamese";
 }

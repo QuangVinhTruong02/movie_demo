@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_demo/core/repository/movie_repository.dart';
@@ -21,7 +22,7 @@ class SearchPage extends StatelessWidget {
         return Scaffold(
           appBar: CustomAppbar(
             leading: null,
-            title: AppLanguages.search,
+            title: AppLanguages.search.tr(),
             actions: [
               IconButton(
                 onPressed: null,

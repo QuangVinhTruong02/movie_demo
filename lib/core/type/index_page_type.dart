@@ -1,19 +1,20 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:movie_demo/gen/assets.gen.dart';
 import 'package:movie_demo/utils/app_languages.dart';
 
 enum IndexPageType {
   home,
   search,
-  watchList;
+  setting;
 
   String get title {
     switch (this) {
       case IndexPageType.home:
-        return AppLanguages.home;
+        return AppLanguages.home.tr();
       case IndexPageType.search:
-        return AppLanguages.search;
-      case IndexPageType.watchList:
-        return AppLanguages.watchList;
+        return AppLanguages.search.tr();
+      case IndexPageType.setting:
+        return AppLanguages.setting.tr();
     }
   }
 
@@ -23,7 +24,7 @@ enum IndexPageType {
         return Assets.icons.icHome.path;
       case IndexPageType.search:
         return Assets.icons.icSearch.path;
-      case IndexPageType.watchList:
+      case IndexPageType.setting:
         return Assets.icons.icBookmark.path;
     }
   }

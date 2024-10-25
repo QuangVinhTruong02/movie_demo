@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/widgets.dart';
 import 'package:movie_demo/gen/assets.gen.dart';
 import 'package:movie_demo/ui/widgets/app_textstyle.dart';
@@ -17,13 +18,13 @@ class SearchNoResult extends StatelessWidget {
           Image.asset(Assets.images.imgSearchNoResults.path),
           const SizedBox(height: 16),
           Text(
-            AppLanguages.notFindTheMovieTitle,
+            AppLanguages.notFindTheMovieTitle.tr(),
             style: AppTextstyle().getSemiBoldMontserratTextStyle(fontSize: 16),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 8),
           Text(
-            AppLanguages.notFindTheMovieSubTitle,
+            AppLanguages.notFindTheMovieSubTitle.tr(),
             style: AppTextstyle().getSemiBoldMontserratTextStyle(
               fontSize: 12,
               color: AppColors.grey1,

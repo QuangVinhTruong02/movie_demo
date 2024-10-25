@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 class AppConst {
   static const String baseUrl = "https://api.themoviedb.org/3";
   static const String apiKeyQuery = "api_key";
@@ -11,4 +13,10 @@ class AppConst {
   static const String trailer = "Trailer";
 
   static const String rootImageurl = "https://image.tmdb.org/t/p/w500/";
+
+  static const String prefsKeyLanguage = "language";
+
+  static const String assetsPathLocalizations = "assets/translations";
+  static const Locale enLocale = Locale('en', 'US');
+  static const Locale viLocale = Locale('vi', 'VN');
 }

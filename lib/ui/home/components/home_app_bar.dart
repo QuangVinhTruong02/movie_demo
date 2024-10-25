@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:movie_demo/gen/assets.gen.dart';
@@ -20,7 +21,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Padding(
         padding: const EdgeInsets.only(left: 14),
         child: Text(
-          AppLanguages.whatDoYouWantToWatch,
+          AppLanguages.whatDoYouWantToWatch.tr(),
           style: AppTextstyle().getSemiBoldPoppinTextStyle(
             fontSize: 18,
           ),
@@ -31,7 +32,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Padding(
           padding: const EdgeInsets.only(left: 24, right: 24, bottom: 10),
           child: CustomTextfield(
-            hintText: AppLanguages.search,
+            hintText: AppLanguages.search.tr(),
             readOnly: true,
             suffixWidget: SvgPicture.asset(Assets.icons.icSearchSuffix.path),
             onTap: viewModel.onPressedNavigateSearchPage,
