@@ -23,4 +23,16 @@ class AppShared {
       return AppConst.viLocale;
     }
   }
+
+  Future<bool> hasDarkTheme() async {
+    return await _rxPreferences.getBool(AppConst.prefsKeyTheme) ?? false;
+  }
+
+  Stream<bool> watchDarkTheme() {
+    return _rxPreferences.getBool(AppConst.prefsKeyTheme).asStream().map((value) => value ?? false);
+  }
+
+  Future<void> setDarkTheme(bool value) async {
+    await _rxPreferences.setBool(AppConst.prefsKeyTheme, value);
+  }
 }

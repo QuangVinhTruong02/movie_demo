@@ -19,13 +19,14 @@ class SearchNoResult extends StatelessWidget {
           const SizedBox(height: 16),
           Text(
             AppLanguages.notFindTheMovieTitle.tr(),
-            style: AppTextstyle().getSemiBoldMontserratTextStyle(fontSize: 16),
+            style: AppTextstyle().getSemiBoldMontserratTextStyle(context: context, fontSize: 16),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 8),
           Text(
             AppLanguages.notFindTheMovieSubTitle.tr(),
             style: AppTextstyle().getSemiBoldMontserratTextStyle(
+              context: context,
               fontSize: 12,
               color: AppColors.grey1,
             ),

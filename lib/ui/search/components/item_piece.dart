@@ -17,11 +17,14 @@ class ItemPiece extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        SvgPicture.asset(iconPath),
+        SvgPicture.asset(
+          iconPath,
+        ),
         const SizedBox(width: 4),
         Text(
           title,
           style: AppTextstyle().getRegularPoppinTextStyle(
+            context: context,
             fontSize: 12,
             color: colorsTitle,
           ),

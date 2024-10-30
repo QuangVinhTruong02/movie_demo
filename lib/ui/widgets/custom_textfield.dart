@@ -25,9 +25,13 @@ class CustomTextfield extends StatelessWidget {
       onTap: onTap,
       readOnly: readOnly,
       controller: controller,
-      style: AppTextstyle().getRegularPoppinTextStyle(),
+      style: AppTextstyle().getRegularPoppinTextStyle(context: context),
       cursorColor: AppColors.white,
       decoration: InputDecoration(
+        hintStyle: AppTextstyle().getRegularPoppinTextStyle(
+          context: context,
+          color: AppColors.grey1,
+        ),
         hintText: hintText,
         suffixIcon: Padding(
           padding: const EdgeInsets.all(14),

@@ -42,7 +42,10 @@ class SearchItemResult extends StatelessWidget {
                   children: [
                     Text(
                       movie.title.isNotEmpty ? movie.title : AppLanguages.unknown,
-                      style: AppTextstyle().getRegularPoppinTextStyle(fontSize: 16),
+                      style: AppTextstyle().getRegularPoppinTextStyle(
+                        context: context,
+                        fontSize: 16,
+                      ),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
                     ),

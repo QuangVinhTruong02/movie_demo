@@ -16,14 +16,18 @@ class DetailMoviePiece extends StatelessWidget {
           children: [
             TextSpan(
               text: "$title:",
-              style: AppTextstyle().getSemiBoldPoppinTextStyle(fontSize: 16),
+              style: AppTextstyle().getSemiBoldPoppinTextStyle(context: context, fontSize: 16),
             ),
             const WidgetSpan(
               child: SizedBox(width: 10),
             ),
             TextSpan(
               text: subTitle,
-              style: AppTextstyle().getRegularPoppinTextStyle(fontSize: 16, color: AppColors.grey1),
+              style: AppTextstyle().getRegularPoppinTextStyle(
+                context: context,
+                fontSize: 16,
+                color: AppColors.grey1,
+              ),
             ),
           ],
         ),

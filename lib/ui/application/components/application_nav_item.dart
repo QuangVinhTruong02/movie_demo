@@ -35,6 +35,7 @@ class ApplicationNavItem extends StatelessWidget {
           Text(
             title,
             style: AppTextstyle().getMediumRobotoTextStyle(
+              context: context,
               fontSize: 12,
               color: isSelected ? AppColors.blue : AppColors.grey1,
             ),

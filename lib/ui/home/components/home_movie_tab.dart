@@ -16,9 +16,12 @@ class HomeMovieTab extends StatelessWidget {
       indicatorColor: AppColors.grey1,
       isScrollable: true,
       onTap: viewModel.onTapMovieTypeChannge,
-      labelStyle: AppTextstyle().getMediumPoppinTextStyle(fontSize: 14),
+      labelStyle: AppTextstyle().getMediumPoppinTextStyle(context: context, fontSize: 14),
       unselectedLabelColor: AppColors.grey1,
-      unselectedLabelStyle: AppTextstyle().getRegularPoppinTextStyle(fontSize: 14),
+      unselectedLabelStyle: AppTextstyle().getRegularPoppinTextStyle(
+        context: context,
+        fontSize: 14,
+      ),
       tabs: viewModel.movieTypeList
           .map(
             (item) => Tab(

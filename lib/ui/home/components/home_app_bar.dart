@@ -23,6 +23,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         child: Text(
           AppLanguages.whatDoYouWantToWatch.tr(),
           style: AppTextstyle().getSemiBoldPoppinTextStyle(
+            context: context,
             fontSize: 18,
           ),
         ),

@@ -7,6 +7,7 @@ import 'package:movie_demo/ui/base/base_widget.dart';
 import 'package:movie_demo/ui/search/components/search_view.dart';
 import 'package:movie_demo/ui/search/search_viewmodel.dart';
 import 'package:movie_demo/ui/widgets/custom_appbar.dart';
+import 'package:movie_demo/utils/app_colors.dart';
 import 'package:movie_demo/utils/app_languages.dart';
 import 'package:provider/provider.dart';
 
@@ -28,7 +29,13 @@ class SearchPage extends StatelessWidget {
                 onPressed: null,
                 icon: IconButton(
                   onPressed: () {},
-                  icon: SvgPicture.asset(Assets.icons.icInfoCircle.path),
+                  icon: SvgPicture.asset(
+                    Assets.icons.icInfoCircle.path,
+                    colorFilter: ColorFilter.mode(
+                      Theme.of(context).iconTheme.color ?? AppColors.white,
+                      BlendMode.srcIn,
+                    ),
+                  ),
                 ),
               )
             ],

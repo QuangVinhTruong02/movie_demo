@@ -23,7 +23,7 @@ class CustomAppbar extends StatelessWidget implements PreferredSizeWidget {
       leading: leading,
       title: Text(
         title,
-        style: AppTextstyle().getSemiBoldMontserratTextStyle(fontSize: 16),
+        style: AppTextstyle().getSemiBoldMontserratTextStyle(context: context, fontSize: 16),
       ),
       actions: actions,
       bottom: PreferredSize(

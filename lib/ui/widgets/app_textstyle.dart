@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:movie_demo/gen/fonts.gen.dart';
 import 'package:movie_demo/utils/app_colors.dart';
 
 class AppTextstyle {
   TextStyle _getTextStyle({
+    required BuildContext context,
     required FontWeight fontWeight,
     required String fontFamily,
     required double fontSize,
@@ -14,12 +14,18 @@ class AppTextstyle {
       fontWeight: fontWeight,
       fontFamily: fontFamily,
       fontSize: fontSize,
-      color: color ?? AppColors.white,
+      color: color ??
+          (Theme.of(context).brightness == Brightness.dark ? AppColors.white : AppColors.black),
     );
   }
 
-  TextStyle getRegularPoppinTextStyle({double fontSize = 14, Color? color}) {
+  TextStyle getRegularPoppinTextStyle({
+    required BuildContext context,
+    double fontSize = 14,
+    Color? color,
+  }) {
     return _getTextStyle(
+      context: context,
       fontWeight: FontWeight.w400,
       fontFamily: FontFamily.poppins,
       fontSize: fontSize,
@@ -27,8 +33,13 @@ class AppTextstyle {
     );
   }
 
-  TextStyle getMediumPoppinTextStyle({double fontSize = 14, Color? color}) {
+  TextStyle getMediumPoppinTextStyle({
+    required BuildContext context,
+    double fontSize = 14,
+    Color? color,
+  }) {
     return _getTextStyle(
+      context: context,
       fontWeight: FontWeight.w500,
       fontFamily: FontFamily.poppins,
       fontSize: fontSize,
@@ -36,8 +47,13 @@ class AppTextstyle {
     );
   }
 
-  TextStyle getSemiBoldPoppinTextStyle({double fontSize = 14, Color? color}) {
+  TextStyle getSemiBoldPoppinTextStyle({
+    required BuildContext context,
+    double fontSize = 14,
+    Color? color,
+  }) {
     return _getTextStyle(
+      context: context,
       fontWeight: FontWeight.w600,
       fontFamily: FontFamily.poppins,
       fontSize: fontSize,
@@ -45,8 +61,13 @@ class AppTextstyle {
     );
   }
 
-  TextStyle getMediumRobotoTextStyle({double fontSize = 14, Color? color}) {
+  TextStyle getMediumRobotoTextStyle({
+    required BuildContext context,
+    double fontSize = 14,
+    Color? color,
+  }) {
     return _getTextStyle(
+      context: context,
       fontWeight: FontWeight.w500,
       fontFamily: FontFamily.roboto,
       fontSize: fontSize,
@@ -54,8 +75,13 @@ class AppTextstyle {
     );
   }
 
-  TextStyle getMediumMontserratTextStyle({double fontSize = 14, Color? color}) {
+  TextStyle getMediumMontserratTextStyle({
+    required BuildContext context,
+    double fontSize = 14,
+    Color? color,
+  }) {
     return _getTextStyle(
+      context: context,
       fontWeight: FontWeight.w500,
       fontFamily: FontFamily.montserrat,
       fontSize: fontSize,
@@ -63,8 +89,13 @@ class AppTextstyle {
     );
   }
 
-  TextStyle getSemiBoldMontserratTextStyle({double fontSize = 14, Color? color}) {
+  TextStyle getSemiBoldMontserratTextStyle({
+    required BuildContext context,
+    double fontSize = 14,
+    Color? color,
+  }) {
     return _getTextStyle(
+      context: context,
       fontWeight: FontWeight.w600,
       fontFamily: FontFamily.montserrat,
       fontSize: fontSize,

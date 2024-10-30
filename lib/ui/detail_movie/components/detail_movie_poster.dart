@@ -33,11 +33,14 @@ class DetailMoviePoster extends StatelessWidget {
                   color: AppColors.darkBackGroundColor.withOpacity(0.4)),
               child: Row(
                 children: [
-                  SvgPicture.asset(Assets.icons.icStart.path),
+                  SvgPicture.asset(
+                    Assets.icons.icStart.path,
+                  ),
                   const SizedBox(width: 1),
                   Text(
                     AppData.rate,
                     style: AppTextstyle().getSemiBoldMontserratTextStyle(
+                      context: context,
                       fontSize: 12,
                       color: AppColors.orange,
                     ),

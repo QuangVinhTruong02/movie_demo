@@ -6,6 +6,7 @@ import 'package:movie_demo/helper/root_image.dart';
 import 'package:movie_demo/ui/home/components/home_image_view.dart';
 import 'package:movie_demo/ui/home/home_viewmodel.dart';
 import 'package:movie_demo/ui/widgets/app_textstyle.dart';
+import 'package:movie_demo/utils/app_colors.dart';
 import 'package:movie_demo/utils/app_languages.dart';
 import 'package:provider/provider.dart';
 
@@ -30,7 +31,7 @@ class HomeCarousel extends StatelessWidget {
                 const SizedBox(height: 4),
                 Text(
                   AppLanguages.somethingWentWrong.tr(),
-                  style: AppTextstyle().getMediumPoppinTextStyle(fontSize: 20),
+                  style: AppTextstyle().getMediumPoppinTextStyle(context: context, fontSize: 20),
                 ),
               ],
             );
@@ -44,7 +45,11 @@ class HomeCarousel extends StatelessWidget {
                     ? RootImage().getBackDropPath(movie.backdropPath)
                     : movie.backdropPath,
                 titleOnImg: movie.title,
-                textStyle: AppTextstyle().getSemiBoldPoppinTextStyle(fontSize: 18),
+                textStyle: AppTextstyle().getSemiBoldPoppinTextStyle(
+                  context: context,
+                  fontSize: 18,
+                  color: AppColors.white,
+                ),
                 onTap: () => viewModel.onPressedNavigateDetailMoviePage(movie.id),
               );
             },

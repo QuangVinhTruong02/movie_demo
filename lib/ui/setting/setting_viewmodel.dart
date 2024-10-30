@@ -1,7 +1,9 @@
 import 'package:flutter_phoenix/flutter_phoenix.dart';
 import 'package:movie_demo/core/type/language_type.dart';
 import 'package:movie_demo/ui/base/base_viewmodel.dart';
+import 'package:movie_demo/ui/my_app/my_app_viewmodel.dart';
 import 'package:movie_demo/utils/app_shared.dart';
+import 'package:provider/provider.dart';
 import 'package:rxdart/rxdart.dart';
 
 class SettingViewModel extends BaseViewModel {
@@ -17,6 +19,9 @@ class SettingViewModel extends BaseViewModel {
     String currentLanguage = await appShared.getLanguage();
     LanguageType languageType = LanguageType.convertStringToEnum(currentLanguage);
     _languageTypeSubject.add(languageType);
+
+    bool hasDarkTheme = await appShared.hasDarkTheme();
+    _darkModeSubject.add(hasDarkTheme);
   }
 
   Future<void> onPressedChangeLocale(LanguageType? languageType) async {
@@ -27,13 +32,15 @@ class SettingViewModel extends BaseViewModel {
     if (context.mounted) Phoenix.rebirth(context);
   }
 
-  void onSwitchDarkMode(bool value) {
+  Future<void> onSwitchDarkMode(bool value) async {
     _darkModeSubject.add(value);
+    context.read<MyAppViewModel>().setDarkMode(value);
   }
 
   @override
   void dispose() {
     super.dispose();
     _languageTypeSubject.close();
+    _darkModeSubject.close();
   }
 }

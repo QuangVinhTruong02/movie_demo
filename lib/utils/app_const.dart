@@ -15,6 +15,7 @@ class AppConst {
   static const String rootImageurl = "https://image.tmdb.org/t/p/w500/";
 
   static const String prefsKeyLanguage = "language";
+  static const String prefsKeyTheme = "Prefs_Key_Theme";
 
   static const String assetsPathLocalizations = "assets/translations";
   static const Locale enLocale = Locale('en', 'US');

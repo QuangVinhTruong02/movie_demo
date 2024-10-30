@@ -29,7 +29,10 @@ class DetailMovieBackdropTitle extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 0),
                   child: Text(
                     titleMovie,
-                    style: AppTextstyle().getSemiBoldPoppinTextStyle(fontSize: 18),
+                    style: AppTextstyle().getSemiBoldPoppinTextStyle(
+                      context: context,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
               )

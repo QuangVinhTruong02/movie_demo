@@ -51,7 +51,7 @@ class StateRendererPopup extends StatelessWidget {
               padding: const EdgeInsets.symmetric(horizontal: 18),
               child: Text(
                 message,
-                style: AppTextstyle().getMediumPoppinTextStyle(fontSize: 16),
+                style: AppTextstyle().getMediumPoppinTextStyle(context: context, fontSize: 16),
                 textAlign: TextAlign.center,
               ),
             ),

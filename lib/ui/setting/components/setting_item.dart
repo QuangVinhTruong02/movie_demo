@@ -13,7 +13,7 @@ class SettingItem extends StatelessWidget {
       children: [
         Text(
           title,
-          style: AppTextstyle().getMediumPoppinTextStyle(fontSize: 16),
+          style: AppTextstyle().getMediumPoppinTextStyle(context: context, fontSize: 16),
         ),
         suffixWidget,
       ],

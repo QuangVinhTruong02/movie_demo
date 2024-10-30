@@ -7,6 +7,7 @@ import 'package:movie_demo/ui/detail_movie/components/detail_movie_bottom_nav_ba
 import 'package:movie_demo/ui/detail_movie/detail_movie_viewmodel.dart';
 import 'package:movie_demo/ui/widgets/custom_appbar.dart';
 import 'package:movie_demo/ui/widgets/leading_back_icon.dart';
+import 'package:movie_demo/utils/app_colors.dart';
 import 'package:movie_demo/utils/app_languages.dart';
 import 'package:provider/provider.dart';
 
@@ -25,7 +26,13 @@ class DetailMovieView extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset(Assets.icons.icBookmarkWhite.path),
+            icon: SvgPicture.asset(
+              Assets.icons.icBookmarkWhite.path,
+              colorFilter: ColorFilter.mode(
+                Theme.of(context).iconTheme.color ?? AppColors.white,
+                BlendMode.srcIn,
+              ),
+            ),
           )
         ],
       ),

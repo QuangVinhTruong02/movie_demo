@@ -55,7 +55,7 @@ class SettingView extends StatelessWidget {
                         dropdownColor: AppColors.grey1,
                         borderRadius: BorderRadius.circular(12),
                         underline: const SizedBox.shrink(),
-                        style: AppTextstyle().getMediumPoppinTextStyle(),
+                        style: AppTextstyle().getMediumMontserratTextStyle(context: context),
                         items: LanguageType.values
                             .map(
                               (item) => DropdownMenuItem<LanguageType>(

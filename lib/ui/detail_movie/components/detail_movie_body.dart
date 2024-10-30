@@ -32,6 +32,7 @@ class DetailMovieBody extends StatelessWidget {
             child: Text(
               AppLanguages.somethingWentWrong.tr(),
               style: AppTextstyle().getSemiBoldPoppinTextStyle(
+                context: context,
                 fontSize: 18,
                 color: AppColors.red,
               ),
